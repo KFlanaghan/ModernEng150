@@ -24,13 +24,13 @@ while True:
         time.sleep(T_off)
         brightness += step
     while brightness > 0:
-            T_on = brightness * period
-            T_off = period - T_on
-            led.value = True
-            time.sleep(T_on)
-            led.value = False
-            time.sleep(T_off)
-            brightness -= step
+        T_on = brightness * period
+        T_off = period - T_on
+        led.value = True
+        time.sleep(T_on)
+        led.value = False
+        time.sleep(T_off)
+        brightness -= step
 
 
 # Convince yourself the expression for step (line 14) is correct
