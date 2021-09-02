@@ -23,7 +23,8 @@ while True:
         led.value = False
         time.sleep(T_off)
         brightness += step
-    while brightness > 0:
+    if brightness >1:
+        while brightness > 0:
             T_on = brightness * period
             T_off = period - T_on
             led.value = True
