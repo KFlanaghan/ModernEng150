@@ -10,7 +10,7 @@ led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
 
 ramp_time = 2  # Time to ramp up, in seconds
-period = 0.1  # Time per cycle, in seconds
+period = 0.01  # Time per cycle, in seconds
 step = period / ramp_time  # how much to increment the brightness each cycle
 
 while True:
