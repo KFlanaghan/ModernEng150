@@ -1,0 +1,27 @@
+cp.pixels.brightness = .2
+grav = 9.8
+x, y, z = cp.acceleration
+while True:
+    if cp.button_a:
+        x, y, z = cp.acceleration
+        c = math.atan((z/(math.sqrt(x**2 + y**2))))
+        d = c / 3.1415 * 180
+        x, y, z = cp.acceleration
+        if abs(z - grav) < 0.2 or abs(x + y) < 0.5:
+            cp.pixels.fill([0, 255, 0])
+            time.sleep(0.1)
+        if abs(x) > 8 and 0<z<1 and 0<y<1:
+            cp.pixels.fill([0, 0, 255])
+            time.sleep(0.01)
+        if abs(y) > 9 and abs(x)<0.3 and abs(z)<0.4:
+            cp.pixels.fill([255, 0, 0])
+            time.sleep(0.01)
+        print(d)
+    cp.pixels.fill([0,0,0])
+    time.sleep(0.01)
+
+
+# What line of code reads the accelerometer?
+# What are the units of acceleration?
+# How does this code relay the acceleration information to the user?
+# Would this make a good level? Why or why not?
